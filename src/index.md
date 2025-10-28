@@ -1,6 +1,7 @@
 ---
 title: My first page
 layout: base.njk
+templateEngineOverride: njk,md
 ---
 
 ## Blog Posts
@@ -9,8 +10,5 @@ layout: base.njk
     {{ post.data.title }}
 {% endfor %}
 
-<ul>
-    {% for post in collections.posts %}
-    <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-    {% endfor %}
-</ul>
+{% include "postlist.njk" %}
+
